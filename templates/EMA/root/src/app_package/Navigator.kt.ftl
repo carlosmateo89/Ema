@@ -1,11 +1,9 @@
 package ${packageName}
 
-import androidx.navigation.NavController
-import com.carmabs.ema.android.navigation.EmaNavigator
-import com.carmabs.ema.core.navigator.EmaBaseNavigator
+import com.carmabs.ema.core.navigator.EmaNavigator
 import com.carmabs.ema.core.navigator.EmaNavigationState
 
-class ${functionalityName}Navigator(override val navController: NavController) : EmaNavigator<${functionalityName}Navigator.Navigation> {
+interface ${functionalityName}Navigator : EmaNavigator<${functionalityName}Navigator.Navigation> {
 
     sealed class Navigation : EmaNavigationState {
 
@@ -17,6 +15,6 @@ class ${functionalityName}Navigator(override val navController: NavController) :
     }
 
     fun toDestination() {
-        navigateWithAction(R.id.navigationAction)
+
     }
 }

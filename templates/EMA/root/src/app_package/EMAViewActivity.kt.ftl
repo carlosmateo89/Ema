@@ -1,6 +1,6 @@
 package ${packageName}
 
-import com.carmabs.ema.android.navigation.EmaNavigator
+import com.carmabs.ema.core.navigator.EmaNavigator
 import com.carmabs.ema.android.ui.EmaActivity
 import com.carmabs.ema.core.state.EmaExtraData
 
@@ -13,11 +13,7 @@ class ${functionalityName}Activity : EmaActivity<${functionalityName}State, ${fu
 
 	override fun provideFixedToolbarTitle(): String? = null
 
-    override fun onInitialized(viewModel: ${functionalityName}ViewModel) {
-
-    }
-
-    override val viewModelSeed: ${functionalityName}ViewModel by instance()
+    override val androidViewModelSeed: Android${functionalityName}ViewModel by instance()
 
     override val navigator: EmaNavigator<<#if navigator?has_content>${navigator}<#else>${functionalityName}Navigator</#if>.Navigation> by instance<<#if navigator?has_content>${navigator}<#else>${functionalityName}Navigator</#if>>()
 
